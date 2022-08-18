@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Parents extends Connect implements Datable{
     private Integer id;
@@ -71,6 +72,35 @@ public class Parents extends Connect implements Datable{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void parentsMenu() {
+        Scanner sc = new Scanner(System.in);
+        boolean exitMenu = true;
+        while (exitMenu) {
+            System.out.println("Выберите действие:");
+            System.out.println("Регистрация родителя");
+            System.out.println("Авторизация родителя");
+            System.out.println("Выход в главное меню");
+            String command = sc.nextLine();
+            switch (command) {
+                case "Регистрация родителя":
+                    // Метод для регистрации родителя
+
+                    break;
+                case "Авторизация родителя":
+                    // Метод для авторизации родителя
+
+                    break;
+                case "Выход в главное меню":
+                    exitMenu = false;
+                    break;
+
+                default:
+                    System.out.println("-------------------------------------------------------------");
+                    System.err.println("Ошибка. Введите название из меню!!!");
+            }
+        }
     }
 
     public void insertParents(Parents parents) {
